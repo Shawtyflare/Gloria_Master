@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="Violin icon.png" />
+    <link rel="stylesheet" href="style.css" />
+
+    <meta charset="UTF-8" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1, minimal-ui"
+    />
+
+    <title>Birthday Surprise</title>
+  </head>
+
+  <body>
+    <video autoplay muted loop id="myVideo">
+      <source src="./assets/video/Video.mp4" type="video/mp4" />
+    </video>
+
+    <h1>
+      A SYMPHONY FOR GLORIA <br />
+      💞🎂🎉
+    </h1>
+
+    <audio id="audio1">
+      <source
+        src="./assets/music/K-Ci  & Jojo - All My Life - Violin Cover [IVbvUILlwws].mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+
+    <div class="text">
+      <h2>Dear Gloria,</h2>
+
+      <p>
+        As we gather here under the golden hues of autumn to celebrate your 20th
+        birthday, we are reminded of the beautiful symphony that is your life.
+        Each year is a new movement, filled with its own unique melodies and
+        harmonies.
+      </p>
+
+      <p>
+        Your love for music is infectious. It's as if each note you play on your
+        violin resonates within our hearts. And who could forget your culinary
+        adventures? Each dish is like a new composition, filled with exciting
+        flavors and textures.
+      </p>
+
+      <p>
+        Watching you play the violin is like witnessing a virtuoso at work, even
+        if it's only once. The sweet melodies you create are a testament to your
+        talent and passion.
+      </p>
+
+      <p>
+        Reconnecting with you has been like discovering a long-lost piece of
+        music, movies, series and most important, friendship. Our shared
+        interests in horror movies and our mutual bouts of laziness have added a
+        touch of humor to our lives. And let's not forget our playful
+        speculations about your supposed psychic abilities!
+      </p>
+
+      <p>
+        But beneath all the jokes and laughter lies a serious ambition. We, no I
+        have no doubt that you will excel in your chosen field of psychology.
+        Who knows? You might even uncover the secret psychology behind musicians
+        who write songs about laziness!
+      </p>
+
+      <p>
+        So here's to another year of beautiful music, delicious food, shared
+        laughter, and new adventures. Happy birthday, Gloria!
+      </p>
+
+      <p>Sincerely,</p>
+      <p><i>Your forever out-of-tune but in perfect harmony friend</i></p>
+      <p><i>Me, Myself and I</i></p>
+    </div>
+
+    <audio id="audio2" controls hidden>
+      <source src="./assets/music/New_Project.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay">
+      <div class="overlay-content">
+        <h2>Welcome Gloria!</h2>
+        <p>Do you wish to enter?</p>
+        <button id="enterButton">Enter</button>
+      </div>
+    </div>
+
+    <script>
+      const audio1 = document.getElementById("audio1");
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const overlay = document.getElementById("overlay");
+        const enterButton = document.getElementById("enterButton");
+
+        // Show the overlay when the page loads
+        overlay.style.display = "flex";
+
+        // Hide the overlay when the "Enter" button is clicked
+        enterButton.addEventListener("click", function () {
+          overlay.style.display = "none";
+
+          playAudio1();
+        });
+      });
+
+      function playAudio1() {
+        audio1.play();
+      }
+
+      function playAudio2() {
+        audio2.play();
+      }
+
+      const audio2 = document.getElementById("audio2");
+      audio1.addEventListener("ended", () => {
+        playAudio2();
+      });
+    </script>
+  </body>
+</html>
