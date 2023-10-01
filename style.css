@@ -97,3 +97,12 @@ audio {
     margin: 0 4rem;
   }
 }
+
+@media (aspect-ratio < 3/4) {
+  h1 {
+    margin: 2rem 2rem;
+  }
+  .text {
+    margin: 0 2rem;
+  }
+}
